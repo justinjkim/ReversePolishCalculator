@@ -7,7 +7,7 @@ package com.company;
  */
 public class Main {
     public static void main(String[] args) {
-        ReversePolishCalc rpc = new ReversePolishCalc();
+        ReversePolishCalc rpc = new ReversePolishCalc(); // remember that ReversePolishCalc has a default constructor if you don't specify your own, this was confusing me for a bit
 
         String rpnExpression = "2.5,4.8,+";
         double expectedResult = 7.3;
