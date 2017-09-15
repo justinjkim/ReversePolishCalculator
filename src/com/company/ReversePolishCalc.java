@@ -28,10 +28,13 @@ public class ReversePolishCalc {
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
             // calls to push() and pop() and do the math here
-            previousNumber = pop();
-            prevoius
+
+
             if (tokens[i].equals("+")) {
-                pop()
+                // push(pop() + pop());
+                stack[top - 1] + stack[top - 2];
+
+
             }
             else {
                 push(tokens[i]); // ok, this should be easy, just add any non-operator into the stack
@@ -59,6 +62,8 @@ public class ReversePolishCalc {
 
     private double pop() {
         // remove the string from the top of the stack and convert it to a double and return it
+
+
         top--;
         return Double.parseDouble(stack[top]);
     }
