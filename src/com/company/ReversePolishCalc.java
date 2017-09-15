@@ -4,7 +4,7 @@ package com.company;
 public class ReversePolishCalc {
 
     // You'll need a variable here to keep track of the top of the stack
-    private int top; // will be the first element of the array? 
+    private int top; // will be the first element of the array?
 
     // The array of the input string split up
     private String[] tokens;
@@ -18,7 +18,7 @@ public class ReversePolishCalc {
         tokens = input.split(",");
 
         // 2. Allocate a stack as big as the number of tokens
-        stack = ...
+        stack = new String[tokens.length]; // ohhhh....this is a String stack because we're keeping strings in the array, not integers
 
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
