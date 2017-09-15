@@ -23,12 +23,18 @@ public class ReversePolishCalc {
         // 2. Allocate a stack as big as the number of tokens
         stack = new String[tokens.length]; // ohhhh....this is a String stack because we're keeping strings in the array, not integers
 
+        top = 0; // counter
+
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
             // calls to push() and pop() and do the math here
-
-            if (tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("/") || tokens[i].equals("*") ) {
-
+            previousNumber = pop();
+            prevoius
+            if (tokens[i].equals("+")) {
+                pop()
+            }
+            else {
+                push(tokens[i]); // ok, this should be easy, just add any non-operator into the stack
             }
 
         }
@@ -39,18 +45,22 @@ public class ReversePolishCalc {
 
     private void push(String number) {
         // push on the stack
-        top++;
+
         stack[top] = number;
+        top++;
     }
 
     private void push(double d) {
         // change the double to a string and then push it on the stack
-        top++;
+
         stack[top] = Double.toString(d);
+        top++;
     }
 
     private double pop() {
         // remove the string from the top of the stack and convert it to a double and return it
+        top--;
+        return Double.parseDouble(stack[top]);
     }
 }
 
