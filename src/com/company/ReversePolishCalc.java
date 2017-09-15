@@ -28,13 +28,33 @@ public class ReversePolishCalc {
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
             // calls to push() and pop() and do the math here
-
-
             if (tokens[i].equals("+")) {
-                // push(pop() + pop());
-                stack[top - 1] + stack[top - 2];
-
-
+                push(pop() + pop());
+//                double hold = Double.parseDouble(stack[top - 1]) + Double.parseDouble(stack[top - 2]);
+//                stack[top - 2] = Double.toString(hold);
+//                top--;
+            }
+            else if (tokens[i].equals("-")) {
+                double number1 = pop();
+                double number2 = pop();
+                push(number2 - number1);
+//                double hold = Double.parseDouble(stack[top - 2]) - Double.parseDouble(stack[top - 1]);
+//                stack[top - 2] = Double.toString(hold);
+//                top--;
+            }
+            else if (tokens[i].equals("/")) {
+                double number1 = pop();
+                double number2 = pop();
+                push(number2 / number1);
+//                double hold = Double.parseDouble(stack[top - 2]) / Double.parseDouble(stack[top - 1]);
+//                stack[top - 2] = Double.toString(hold);
+//                top--;
+            }
+            else if (tokens[i].equals("*")) {
+                push(pop() * pop());
+//                double hold = Double.parseDouble(stack[top - 1]) * Double.parseDouble(stack[top - 2]);
+//                stack[top - 2] = Double.toString(hold);
+//                top--;
             }
             else {
                 push(tokens[i]); // ok, this should be easy, just add any non-operator into the stack
@@ -43,12 +63,11 @@ public class ReversePolishCalc {
         }
 
         // 4. return the result
-        return pop();
+        return pop(); // you need this to actually extract the final value from the stack, otherwise, it's stuck in there;
     }
 
     private void push(String number) {
         // push on the stack
-
         stack[top] = number;
         top++;
     }
