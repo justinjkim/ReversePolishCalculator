@@ -1,6 +1,9 @@
 package com.company;
 
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+
 public class ReversePolishCalc {
 
     // You'll need a variable here to keep track of the top of the stack
@@ -23,6 +26,10 @@ public class ReversePolishCalc {
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
             // calls to push() and pop() and do the math here
+
+            if (tokens[i].equals("+") || tokens[i].equals("-") || tokens[i].equals("/") || tokens[i].equals("*") ) {
+
+            }
 
         }
 
