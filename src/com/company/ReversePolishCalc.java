@@ -38,6 +38,8 @@ public class ReversePolishCalc {
 
     private void push(double d) {
         // change the double to a string and then push it on the stack
+        top++;
+        stack[top] = Double.toString(d);
     }
 
     private double pop() {
