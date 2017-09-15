@@ -23,6 +23,7 @@ public class ReversePolishCalc {
         // 3. write the algorithm
         for(int i = 0; i < tokens.length; ++i) {
             // calls to push() and pop() and do the math here
+
         }
 
         // 4. return the result
@@ -31,6 +32,8 @@ public class ReversePolishCalc {
 
     private void push(String number) {
         // push on the stack
+        top++;
+        stack[top] = number;
     }
 
     private void push(double d) {
